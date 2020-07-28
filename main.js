@@ -1,9 +1,22 @@
-import { ToyReact } from "./ToyReact.js"
-class MyComponent {
+import { ToyReact, Component } from "./ToyReact.js"
+class MyComponent extends Component {
     render() {
-        return <div>cool</div>
+        return <div name="shao">
+            <span>are</span>
+            <span>you</span>
+            <span>ok</span>
+            {this.children}
+        </div>
     }
 }
-let a = <MyComponent></MyComponent>
+class HisComponent extends Component {
+    render() {
+        return <div>his hero</div>
+    }
+}
+let a = <MyComponent name="duke" id="box">
+    <div>children</div>
+    <HisComponent></HisComponent>
+</MyComponent>
 ToyReact.render(a, document.querySelector("#root"))
 //如果是大写，会以变量的形式传入；小写则会以字符串的形式传入 createElement(){}
