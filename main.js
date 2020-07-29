@@ -1,4 +1,4 @@
-import { ToyReact, Component } from "./ToyReact.js"
+import { ToyReact, Component } from "./lib/ToyReact.js"
 class MyComponent extends Component {
     render() {
         return <div name="shao">
